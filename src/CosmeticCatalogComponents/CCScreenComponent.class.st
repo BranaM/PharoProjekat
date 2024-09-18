@@ -17,6 +17,17 @@ CCScreenComponent >> children [
 	^ { header }
 ]
 
+{ #category : #accesing }
+CCScreenComponent >> createHeaderComponent [ 
+	^ CCHeaderComponent from: self
+]
+
+{ #category : #accesing }
+CCScreenComponent >> initialize [ 
+	super initialize.
+	header := self createHeaderComponent
+]
+
 { #category : #rendering }
 CCScreenComponent >> renderContentOn: html [ 
 	html render: header

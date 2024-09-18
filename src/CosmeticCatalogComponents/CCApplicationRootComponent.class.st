@@ -15,7 +15,7 @@ CCApplicationRootComponent class >> canBeRoot [
 { #category : #'class initialization' }
 CCApplicationRootComponent class >> initialize [
 	| app |
-	app := WAAdmin register: self asApplicationAt: 'RecipeBook'.
+	app := WAAdmin register: self asApplicationAt: 'CosmeticCatalog'.
 	app
 		addLibrary: JQDeploymentLibrary;
 		addLibrary: JQUiDeploymentLibrary;
@@ -27,6 +27,12 @@ CCApplicationRootComponent >> children [
 	^ { main }
 ]
 
+{ #category : #initialization }
+CCApplicationRootComponent >> initialize [ 
+	super initialize.
+	main := ProductsListComponent new 
+]
+
 { #category : #accessing }
 CCApplicationRootComponent >> main: aComponent [ 
 	main := aComponent
@@ -34,7 +40,7 @@ CCApplicationRootComponent >> main: aComponent [
 
 { #category : #rendering }
 CCApplicationRootComponent >> renderContentOn: html [
- html text: 'CosmeticCatalog'
+ html text: main
 ]
 
 { #category : #updating }

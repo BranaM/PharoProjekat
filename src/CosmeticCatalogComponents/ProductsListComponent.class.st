@@ -39,6 +39,11 @@ ProductsListComponent >> goToAdministrationView [ [
 
 ]
 
+{ #category : #accessing }
+ProductsListComponent >> goToIngredientView [ 
+	self call: ProductWithIngredientsComponent new
+]
+
 { #category : #initialization }
 ProductsListComponent >> initialize [ 
 	super initialize.
