@@ -22,7 +22,7 @@ CCScreenComponent >> createHeaderComponent [
 	^ CCHeaderComponent from: self
 ]
 
-{ #category : #accesing }
+{ #category : #initialize }
 CCScreenComponent >> initialize [ 
 	super initialize.
 	header := self createHeaderComponent

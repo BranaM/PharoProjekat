@@ -63,8 +63,11 @@ CosmeticCatalog >> addProduct: aProduct [
 ]
 
 { #category : #accesing }
-CosmeticCatalog >> allProducts [
+CosmeticCatalog >> allProducts [ 
+	products ifNil: [ products := OrderedCollection new ].
 	^ products
+
+
 
 ]
 
@@ -91,7 +94,10 @@ CosmeticCatalog >> productsByCategory: aCategory [
 
 { #category : #'private ' }
 CosmeticCatalog >> productsByType: aType [
-        ^ products select: [ :product | product type = aType ].
+	products ifNil: [ products := OrderedCollection new ].
+	^ products select: [ :product | product type = aType ]
+
+
 ]
 
 { #category : #removing }

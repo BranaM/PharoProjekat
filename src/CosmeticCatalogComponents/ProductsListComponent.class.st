@@ -8,13 +8,6 @@ Class {
 	#category : #CosmeticCatalogComponents
 }
 
-{ #category : #'as yet unclassified' }
-ProductsListComponent >> categoriesComponent [ 
-	^ CCTypesComponent
-		types: self catalog allTypes
-		products: self
-]
-
 { #category : #hooks }
 ProductsListComponent >> children [ [
 	^ self productComponents, super children
@@ -47,7 +40,7 @@ ProductsListComponent >> goToIngredientView [
 { #category : #initialization }
 ProductsListComponent >> initialize [ 
 	super initialize.
-	productComponents := OrderedCollection new
+	productComponents := OrderedCollection new.
 
 ]
 
@@ -59,20 +52,25 @@ ProductsListComponent >> productComponentFor: aProduct [ [
 ]
 
 { #category : #accessing }
-ProductsListComponent >> productComponents [ [
-	productComponents := self readSelectedProducts 
+ProductsListComponent >> productComponents [ 
+	productComponents := (self readSelectedProducts ifNil: [ OrderedCollection new ])
 		collect: [ :each | ProductComponent new product: each ].
 	^ productComponents
-]
+
+
 
 ]
 
 { #category : #accessing }
-ProductsListComponent >> readSelectedProducts [ 
+ProductsListComponent >> readSelectedProducts [  
 	^ self currentType 
 		ifNil: [ self catalog allProducts  ]
 		ifNotNil: [ self catalog productsByType: self
 			currentType ]
+
+
+
+
 ]
 
 { #category : #rendering }
