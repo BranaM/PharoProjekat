@@ -56,13 +56,6 @@ CosmeticCatalogTest >> testProductCount [
 ]
 
 { #category : #tests }
-CosmeticCatalogTest >> testProductsByCategory [
-    self assert: (catalog productsByCategory: 'Skincare')
-        size equals: 1.
-
-]
-
-{ #category : #tests }
 CosmeticCatalogTest >> testProductsByType [
     self assert: (catalog productsByType: 'Skincare')
         size equals: 1.
