@@ -63,6 +63,13 @@ CosmeticCatalogTest >> testProductsByCategory [
 ]
 
 { #category : #tests }
+CosmeticCatalogTest >> testProductsByType [
+    self assert: (catalog productsByType: 'Skincare')
+        size equals: 1.
+
+]
+
+{ #category : #tests }
 CosmeticCatalogTest >> testRemoveAllProducts [
     catalog removeAllProducts.
     self assert: catalog productCount equals: 0.
