@@ -87,11 +87,6 @@ CosmeticCatalog >> productCount [
     ^ products size
 ]
 
-{ #category : #accesing }
-CosmeticCatalog >> productsByCategory: aCategory [
-    ^ products select: [ :product | product category = aCategory ]
-]
-
 { #category : #'private ' }
 CosmeticCatalog >> productsByType: aType [
 	products ifNil: [ products := OrderedCollection new ].
