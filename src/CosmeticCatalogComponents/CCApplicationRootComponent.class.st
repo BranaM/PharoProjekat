@@ -47,5 +47,5 @@ CCApplicationRootComponent >> renderContentOn: html [
 CCApplicationRootComponent >> updateRoot: anHtmlRoot [
  super updateRoot: anHtmlRoot.
  anHtmlRoot beHtml5.
- anHtmlRoot title: 'Cosmetic Catalog'
+ anHtmlRoot title: 'CosmeticCatalog'
 ]
